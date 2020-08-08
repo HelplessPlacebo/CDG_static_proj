@@ -1,0 +1,614 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F9FAFC;
+}
+
+@font-face {
+
+    font-family: 'Roboto', serif;
+    src: url(../assets/roboto/Roboto-Regular.woff2) format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+
+/*********************** Navbar **********************  */
+.nav-container {
+    background: #3744BD;
+    width: 1920px;
+    height: 91px;
+    display: grid;
+    grid-template-columns: 1603px 258px;
+    grid-template-rows: 91px;
+}
+
+/************************ Nav links **********************  */
+
+.nav-links-container {
+    width: 452px;
+    margin-top: 36px;
+    margin-left: 78px;
+}
+
+.nav-links-position {
+    margin-left: 14px;
+}
+
+.nav-links {
+    display: grid;
+    grid-template-rows: 26px;
+    grid-template-columns: 49px 53px 42px 67px;
+    column-gap: 73px;
+}
+
+/*Nav links*/
+.nav-links-item {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 144.2%;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.active-link {
+    width: 77px;
+    background-color: #fff;
+    height: 3px;
+    margin-top: 24px;
+}
+
+/***********************************************/
+
+/************************ Nav Icons************************  */
+.nav-icons-container {
+    width: 256px;
+    margin-top: 22px;
+    margin-bottom: 23px;
+    border-right: 61px;
+}
+
+.nav-icons {
+    display: grid;
+    grid-template-columns: 20px 20px 20px 50px;
+    grid-template-rows: 46px;
+    grid-column-gap: 46px;
+}
+
+.small-icons {
+    width: 20px;
+    height: 20px;
+}
+
+.avatar-icon {
+    margin-top: 4px;
+    margin-left: 11px;
+    align-self: center;
+}
+
+/***********************************************/
+
+/************************  Body ***********************  */
+
+.main-wrapper {
+    margin-top: 51px;
+    display: grid;
+    grid-template-columns: 1296px 624px;
+    grid-template-rows: 860px;
+}
+
+
+/*Time Tracking & Calendar sync*/
+.TImeTracking_and_Calendar {
+    display: grid;
+    grid-template-rows: 363px 497px;
+}
+
+/***********************************************/
+
+/***********************  main screen ********************** */
+.calendar-All-Favorites-wrapper {
+    width: 1069px;
+    margin-left: 96px;
+    display: grid;
+    grid-template-columns: 893px 79px 97px;
+    grid-template-rows: 58px;
+}
+
+/***********************************************/
+
+/***********************  Calendar **********************  */
+
+
+.calendar-container {
+    width: 197px;
+    height: 58px;
+    border-radius: 30px;
+    background-color: #F0F3F5;
+
+}
+
+.calendar-content {
+    display: grid;
+    grid-template-columns: 156px 12px;
+    grid-template-rows: 19px;
+}
+
+.calendar-icon {
+    margin-top: 3px;
+    width: 12px;
+    height: 12px;
+}
+
+.calendar-date {
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 144.2%;
+    font-variant: small-caps;
+    text-transform: uppercase;
+    color: #3744BD;
+    margin-top: 16px;
+    margin-left: 32px;
+}
+
+/***********************************************/
+
+/***********************    Button ALL ********************** * */
+.all-button-bg {
+    margin-top: 6px;
+    margin-bottom: 5px;
+    width: 79px;
+    height: 47px;
+    background: #F0F3F5;
+    border-radius: 30px;
+}
+
+.all-button-content {
+    margin-top: 10px;
+    margin-left: 27px;
+    margin-bottom: 18px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 144.2%;
+    color: #4F4F4F;
+}
+
+/***********************************************/
+
+/**********************   Button Favorites ********************** */
+.favorites-button-container {
+    margin-left: 21px;
+    margin-top: 16px;
+    width: 76px;
+    height: 19px;
+}
+
+.favorites-button {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 144.2%;
+    color: #BBBBBB;
+}
+
+/***********************************************/
+
+
+/**********************  First date **************/
+.first-date-container {
+    width: 1085px;
+    margin-top: 50px;
+    margin-left: 96px;
+    display: grid;
+    grid-template-columns: 899px 101px 85px;
+    grid-template-rows: 50px;
+}
+
+.second-date-container {
+    width: 1085px;
+    margin-top: 81px;
+    margin-left: 96px;
+    display: grid;
+    grid-template-columns: 899px 101px 85px;
+    grid-template-rows: 50px;
+}
+
+.date-block-container {
+    width: 255px;
+    height: 32px;
+}
+
+.date-block-size {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 144.2%;
+    color: #1E1E1E;
+}
+
+.download-icon {
+    align-self: center;
+    margin-left: 47px;
+}
+
+.date-time {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 144.2%;
+    color: #BBBBBB;
+
+
+}
+
+/******************************* Progress bar ********* */
+.progress {
+    margin-top: 8px;
+    font: 12px Arial, Tahoma, sans-serif;
+    position: relative;
+    overflow: hidden;
+    width: 100px;
+    height: 6px;
+}
+
+.progress progress {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    left: -777px;
+}
+
+.progress-bar {
+    overflow: hidden;
+    background: #FFCC40;
+    width: 66px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.progress-value {
+    color: #333;
+    display: block;
+    line-height: 21px;
+    text-align: center;
+}
+
+.progress-bg {
+    background: #F0F3F5;
+    position: relative;
+    height: 8px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/***********************************************/
+
+
+/***************  line stroke ******************/
+.line-stroke {
+    margin-left: 72px;
+    width: 1140px;
+    border: 1px solid #E9ECF2;
+}
+
+.fist-line-stroke-container {
+    margin-top: 34px;
+}
+
+.second-line-stroke-container {
+    margin-top: 7px;
+}
+
+/***********************************************/
+
+/***************  worlog block ******************/
+.worklog-block-container {
+    width: 1077px;
+    margin-top: 5px;
+    margin-left: 104px;
+    display: grid;
+    grid-template-columns: 127px 59px 574px 159px 83px 75px;
+    grid-template-rows: 76px;
+
+}
+
+.work-time {
+    align-self: center;
+    display: grid;
+    grid-template-columns: 50px 17px 51px;
+    grid-template-rows: 27px;
+
+}
+
+.start-time {
+    font-style: normal;
+    line-height: 144.2%;
+    font-weight: 500;
+    font-size: 18px;
+    color: #1E1E1E;
+
+}
+
+.end-time {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 144.2%;
+    color: #BBBBBB;
+}
+
+.minus {
+    margin-bottom: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 144.2%;
+    font-size: 18px;
+    color: #BBBBBB;
+}
+
+/*Color Point*/
+.color-point {
+    margin-left: 25px;
+    width: 3.25px;
+    background: #E34040;
+    border-radius: 1px;
+}
+
+.color-point-2 {
+    margin-left: 25px;
+    width: 3.25px;
+    background: #62D2B1;
+    border-radius: 1px;
+}
+
+.color-point-3 {
+    margin-left: 25px;
+    width: 3.25px;
+    background: #FFCC40;
+    border-radius: 1px;
+}
+
+/*****************************************/
+.worklog-content-container {
+    margin-top: 8px;
+}
+
+.jira-code {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 144.2%;
+    font-variant: small-caps;
+    color: #828282;
+}
+
+.task-field {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 144.2%;
+    color: #1E1E1E;
+}
+
+/*progress bar*/
+
+.progress-bar-container {
+    margin-top: 38px;
+    width: 108px;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #F0F3F5;
+}
+
+.progress-bar-red {
+    width: 19px;
+    border: 4px solid #E34040;
+    border-radius: 4px;
+}
+
+.progress-bar-green {
+    width: 106px;
+    border: 4px solid #62D2B1;
+    border-radius: 4px;
+}
+
+.progress-bar-yellow {
+    width: 45px;
+    border: 4px solid #FFCC40;
+    border-radius: 4px;
+}
+
+/*********** timer value*/
+.timer-value-container {
+    width: 83px;
+    height: 19px;
+    margin-top: 27px;
+}
+
+.timer-value {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 144.2%;
+    color: #BBBBBB;
+}
+
+.play-button {
+    margin-left: 37px;
+}
+
+/***********************************************/
+
+.third-worklog-worktime {
+    margin-top: 20px;
+    margin-left: 45px;
+    width: 38px;
+    height: 38px;
+    border-radius: 38px;
+    background-color: #FFFFFF;
+}
+
+.tww-content {
+    margin-top: 7px;
+    margin-left: 15px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 144.2%;
+    font-variant: small-caps;
+    color: #4F4F4F;
+}
+
+/*separator line*/
+.separator-line-container {
+    width: 1229px;
+    margin-left: 40px;
+    margin-top: 28px;
+    height: 39px;
+}
+
+/***********************************************/
+
+/******************  slider ****************/
+.slider-times-container {
+    margin-top: 14px;
+    margin-left: 108px;
+    width: 1090px;
+    height: 14px;
+
+}
+
+.slider-times {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 144.2%;
+    color: #C4CACB;
+    display: grid;
+    grid-template-columns: repeat(13, 34px);
+    grid-template-rows: 14px;
+    grid-column-gap: 54px;
+}
+
+/***********************************************/
+/******************  time tracking ****************/
+/******************  time tracking header****************/
+.timetracking-header-container {
+    width: 529px;
+    height: 32px;
+    margin-left: 36px;
+}
+
+.TT-layout {
+    display: grid;
+    grid-template-columns: 1px 1fr;
+    grid-template-rows: 1fr;
+}
+
+.TT-content {
+    width: 624px;
+    height: 363px;
+}
+
+.timetracking-header {
+    display: grid;
+    grid-template-columns: 505px 24px;
+    grid-template-rows: 32px;
+}
+
+.Time-tracking-logo {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 144.2%;
+    color: #1E1E1E;
+}
+
+.more-icon-size-container {
+    margin-top: 4px;
+}
+
+.more-icon-size {
+    width: 24px;
+    height: 24px;
+}
+
+/***********************************************/
+/******************  time tracking button new worklog****************/
+.New-worklog-container {
+    margin-left: 274px;
+    margin-top: 84px;
+}
+
+.New-worklog {
+    width: 112px;
+    height: 114px;
+}
+
+.new-worklog-button-size {
+    width: 66px;
+    height: 66px;
+}
+
+.new-worklog-button-pose {
+    margin-left: 22px;
+    margin-right: 24px;
+    border-top: 22px;
+}
+
+.new-worklog-button-description-container {
+
+}
+
+.new-worklog-button-description {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 144.2%;
+    text-align: center;
+    font-variant: small-caps;
+    color: #C4CACB;
+}
+
+/***********************************************/
+
+/***********************************************/
+.TT-horiz-stroke-pose {
+    height: 1px;
+    margin-top: 110px;
+}
+
+/*****************  Google calendar sync***************/
+.GCS-container {
+    width: 527px;
+    height: 32px;
+    margin-left: 38px;
+    margin-top: 31px;
+}
+.GCS{
+    display: grid;
+    grid-template-columns: 255px 260px 12px;
+    grid-template-rows: 32px;
+}
+.GCS-description{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 144.2%;
+    color: #1E1E1E;
+}
+.GCS-switch-pose{
+    margin-top: 3px;
+}
+.GCS-calendar-pose{
+    margin-top: 10px;
+}
