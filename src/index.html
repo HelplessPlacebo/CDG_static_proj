@@ -5,8 +5,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>CDG_static</title>
     <link rel="stylesheet" href="./index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -427,7 +428,7 @@
         </div>
     </div>
 
-                                        <!-- TIme tracking block  -->
+    <!-- TIme tracking block  -->
     <div class="TImeTracking_and_Calendar">
         <div class="TT-layout">
             <div>
@@ -467,17 +468,17 @@
                 </div>
             </div>
         </div>
-                                    <!-- *********************************-->
+        <!-- *********************************-->
 
-                                            <!-- TIme tracking block  -->
-        <div class="GCS-container">
+        <!-- TIme tracking block  -->
+        <div id="GCS" class="GCS-container">
             <div class="GCS">
                 <div class="GCS-description">
                     Google calendar sync
                 </div>
                 <div class="GCS-switch-pose">
-                    <img src="../assets/imgs/switch_unactive.svg"
-                         alt="switch">
+                    <input id="GCS-toggle"
+                           type="checkbox">
                 </div>
                 <div class="GCS-calendar-pose">
                     <img src="../assets/imgs/calendar_gray.svg"
@@ -485,10 +486,11 @@
                 </div>
             </div>
         </div>
-                                        <!-- *********************************-->
+        <!-- *********************************-->
     </div>
 </div>
-<!--*********************************************-->
 
+<!--*********************************************-->
+<script src="script.js"></script>
 </body>
 </html>
