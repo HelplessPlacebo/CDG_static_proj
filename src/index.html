@@ -10,6 +10,7 @@
 </head>
 
 <body>
+<!--********************* Nav bar ***********-->
 <header>
     <div class="nav-container">
         <div class="nav-links-container">
@@ -42,10 +43,12 @@
         </div>
     </div>
 </header>
+<!--*********************************************-->
 
-
-<div class="main-wrapper">
+<!--********************* Body ***********-->
+<div class="main-wrapper">      <!-- it's a body of all page  -->
     <div>
+        <!--********************* Fist line of body content (calendar and 2  sorting buttons) ***********-->
         <div class="calendar-All-Favorites-wrapper">
             <div class="calendar-container">
                 <div class="calendar-content">
@@ -58,6 +61,7 @@
                     </div>
                 </div>
             </div>
+            <!--********************* sorting buttons ***********-->
             <div class="all-button-bg">
                 <div class="all-button-content">
                     All
@@ -68,14 +72,20 @@
                     Favorites
                 </div>
             </div>
+            <!--*********************************************-->
         </div>
+        <!--*********************************************-->
 
+        <!--********************* Worklog block  ***********-->
+
+        <!--********************* first line of  Worklog block (created date + summary timer value + download button) ***********-->
         <div class="first-date-container">
             <div class="date-block-container">
                 <div class="date-block-size">
                     Wed, June 10
                 </div>
             </div>
+            <!--********************* on this block displaying time spent on the task and  color progress bar  ***********-->
             <div class="date-time">
                 06:05:00
                 <div class="progress">
@@ -86,6 +96,7 @@
                     </div>
                 </div>
             </div>
+            <!--*********************************************-->
             <div class="download-icon">
                 <p>
                     <img src="../assets/imgs/download.svg" alt="download-icon">
@@ -95,11 +106,12 @@
         <div class="fist-line-stroke-container">
             <div class="line-stroke"></div>
         </div>
+        <!--*********************************************-->
 
-
+        <!--********************* here is all part of  first worklog***********-->
         <div class="worklog-block-container">
 
-            <!-- fix this in the next time -->
+            <!-- spent time on this task (fix this in the next time) -->
             <div class="work-time">
                 <div class="start-time">
                     09:00
@@ -112,15 +124,23 @@
                 </div>
                 <!-- *********************************-->
             </div>
+            <!-- execution result of task (green - good, yellow - well, red - bad)  -->
             <div class="color-point"></div>
+            <!-- *********************************-->
+
+            <!-- task information (jira code and task name)  -->
             <div class="worklog-content-container">
                 <div class="jira-code">
                     JRM-310
                 </div>
+                <!--********************* task field ***********-->
                 <div class="task-field">
                     Team standup
                 </div>
+                <!-- *********************************-->
             </div>
+            <!-- *********************************-->
+
             <div class="progress-bar-container">
                 <div class="progress-bar-red"></div>
             </div>
@@ -136,11 +156,12 @@
         <div class="second-line-stroke-container">
             <div class="line-stroke"></div>
         </div>
+        <!--*********************************************-->
 
-        <!--second block -->
+        <!--second element of worklog block -->
         <div class="worklog-block-container">
 
-            <!-- fix this in the next time -->
+            <!-- spent time on this task (fix this in the next time) -->
             <div class="work-time">
                 <div class="start-time">
                     10:00
@@ -153,7 +174,10 @@
                 </div>
                 <!-- *********************************-->
             </div>
+            <!-- execution result of task (green - good, yellow - well, red - bad)  -->
             <div class="color-point-2"></div>
+            <!-- *********************************-->
+            <!-- task information (jira code and task name)  -->
             <div class="worklog-content-container">
                 <div class="jira-code">
                     JRM-310
@@ -162,23 +186,32 @@
                     Meeting with QA
                 </div>
             </div>
+            <!-- *********************************-->
+            <!-- progress bar of this task  -->
             <div class="progress-bar-container">
                 <div class="progress-bar-green"></div>
             </div>
+            <!-- *********************************-->
+            <!-- timer of this task  -->
             <div class="timer-value-container">
                 <div class="timer-value">01:10:00</div>
             </div>
+            <!-- *********************************-->
+            <!-- button for run timer  -->
             <div class="play-button">
                 <p>
                     <img src="../assets/imgs/play-button.svg" alt="play-button">
                 </p>
             </div>
+            <!-- *********************************-->
         </div>
+        <!-- stroke line for separating blocks  -->
         <div class="second-line-stroke-container">
             <div class="line-stroke"></div>
         </div>
+        <!-- *********************************-->
 
-        <!--third block -->
+        <!--third element of worklog block -->
         <div class="worklog-block-container">
             <div class="wbc-block">
                 <div class="work-time">
@@ -222,7 +255,14 @@
                 <img src="../assets/imgs/separator-line.svg" alt="separator-line">
             </p>
         </div>
+        <!--*********************************************-->
+
+        <!--*********************************************-->
+
+        <!-- slider -->
         <div class="slider-times-container">
+
+
             <div class="slider-times">
                 <div>7:00</div>
                 <div>8:00</div>
@@ -239,7 +279,10 @@
                 <div>19:00</div>
             </div>
         </div>
-        <!--   second date block-->
+        <!--*********************************************-->
+
+        <!--   second date block (the same as the first block, but in it some tasks have
+          different colors and execution time, as well as the date)-->
         <div class="second-date-container">
             <div class="date-block-container">
                 <div class="date-block-size">
@@ -384,7 +427,7 @@
         </div>
     </div>
 
-
+                                        <!-- TIme tracking block  -->
     <div class="TImeTracking_and_Calendar">
         <div class="TT-layout">
             <div>
@@ -405,7 +448,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="New-worklog-container">
                     <div class="New-worklog">
                         <div class="new-worklog-button-pose">
@@ -425,6 +467,9 @@
                 </div>
             </div>
         </div>
+                                    <!-- *********************************-->
+
+                                            <!-- TIme tracking block  -->
         <div class="GCS-container">
             <div class="GCS">
                 <div class="GCS-description">
@@ -434,15 +479,16 @@
                     <img src="../assets/imgs/switch_unactive.svg"
                          alt="switch">
                 </div>
-                    <div class="GCS-calendar-pose">
-                        <img src="../assets/imgs/calendar_gray.svg"
-                             alt="calendar">
-                    </div>
+                <div class="GCS-calendar-pose">
+                    <img src="../assets/imgs/calendar_gray.svg"
+                         alt="calendar">
+                </div>
             </div>
         </div>
+                                        <!-- *********************************-->
     </div>
 </div>
-
+<!--*********************************************-->
 
 </body>
 </html>

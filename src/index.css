@@ -96,7 +96,7 @@ body {
     margin-top: 51px;
     display: grid;
     grid-template-columns: 1296px 624px;
-    grid-template-rows: 860px;
+    grid-template-rows: 1080px;
 }
 
 
@@ -242,8 +242,6 @@ body {
     font-size: 24px;
     line-height: 144.2%;
     color: #BBBBBB;
-
-
 }
 
 /******************************* Progress bar ********* */
@@ -593,12 +591,14 @@ body {
     margin-left: 38px;
     margin-top: 31px;
 }
-.GCS{
+
+.GCS {
     display: grid;
     grid-template-columns: 255px 260px 12px;
     grid-template-rows: 32px;
 }
-.GCS-description{
+
+.GCS-description {
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
@@ -606,9 +606,11 @@ body {
     line-height: 144.2%;
     color: #1E1E1E;
 }
-.GCS-switch-pose{
+
+.GCS-switch-pose {
     margin-top: 3px;
 }
-.GCS-calendar-pose{
+
+.GCS-calendar-pose {
     margin-top: 10px;
 }
