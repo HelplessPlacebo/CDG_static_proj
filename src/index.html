@@ -47,11 +47,11 @@
 <!--*********************************************-->
 
 <!--********************* Body ***********-->
-<div class="main-wrapper">      <!-- it's a body of all page  -->
+<div id="main-wrapper" class="main-wrapper">      <!-- it's a body of all page  -->
     <div>
         <!--********************* Fist line of body content (calendar and 2  sorting buttons) ***********-->
-        <div class="calendar-All-Favorites-wrapper">
-            <div class="calendar-container">
+        <div  class="calendar-All-Favorites-wrapper">
+            <div id="calendar-id"   class="calendar-container">
                 <div class="calendar-content">
                     <div class="calendar-date">
                         10 june 2020
@@ -80,29 +80,12 @@
         <!--********************* Worklog block  ***********-->
 
         <!--********************* first line of  Worklog block (created date + summary timer value + download button) ***********-->
-        <div class="first-date-container">
-            <div class="date-block-container">
-                <div class="date-block-size">
-                    Wed, June 10
-                </div>
-            </div>
-            <!--********************* on this block displaying time spent on the task and  color progress bar  ***********-->
-            <div class="date-time">
-                06:05:00
-                <div class="progress">
-                    <progress max="100" value="0"></progress>
-                    <div class="progress-value"></div>
-                    <div class="progress-bg">
-                        <div class="progress-bar"></div>
-                    </div>
-                </div>
-            </div>
-            <!--*********************************************-->
-            <div class="download-icon">
-                <p>
-                    <img src="../assets/imgs/download.svg" alt="download-icon">
-                </p>
-            </div>
+        <div style=" width: 1085px;margin-top: 50px; margin-left: 96px;">
+            <summary-worklog date="Wed, June 10"
+                             summary-time="06:05:00"
+                             progress-value="yellow">
+
+            </summary-worklog>
         </div>
         <div class="fist-line-stroke-container">
             <div class="line-stroke"></div>
@@ -110,160 +93,77 @@
         <!--*********************************************-->
 
         <!--********************* here is all part of  first worklog***********-->
+
+        <!--   custom component worklog-create must contain the following attributes
+          start-time - string
+          end-time - string
+          jira-code - string
+          task-field - string
+          timer-value - string
+          color-point - 'red' or 'green' or 'yellow'
+          -->
         <div class="worklog-block-container">
-
-            <!-- spent time on this task (fix this in the next time) -->
-            <div class="work-time">
-                <div class="start-time">
-                    09:00
-                </div>
-                <div class="minus">
-                    -
-                </div>
-                <div class="end-time">
-                    10:00
-                </div>
-                <!-- *********************************-->
-            </div>
-            <!-- execution result of task (green - good, yellow - well, red - bad)  -->
-            <div class="color-point"></div>
-            <!-- *********************************-->
-
-            <!-- task information (jira code and task name)  -->
-            <div class="worklog-content-container">
-                <div class="jira-code">
-                    JRM-310
-                </div>
-                <!--********************* task field ***********-->
-                <div class="task-field">
-                    Team standup
-                </div>
-                <!-- *********************************-->
-            </div>
-            <!-- *********************************-->
-
-            <div class="progress-bar-container">
-                <div class="progress-bar-red"></div>
-            </div>
-            <div class="timer-value-container">
-                <div class="timer-value">01:00:00</div>
-            </div>
-            <div class="play-button">
-                <p>
-                    <img src="../assets/imgs/play-button.svg" alt="play-button">
-                </p>
-            </div>
+            <worklog-create start-time="09:00" end-time="10:00"
+                            jira-code="JRM-310" task-field="Team standup"
+                            timer-value="01:00:00" color-point="red">
+            </worklog-create>
         </div>
+
         <div class="second-line-stroke-container">
             <div class="line-stroke"></div>
         </div>
         <!--*********************************************-->
 
         <!--second element of worklog block -->
-        <div class="worklog-block-container">
 
-            <!-- spent time on this task (fix this in the next time) -->
-            <div class="work-time">
-                <div class="start-time">
-                    10:00
-                </div>
-                <div class="minus">
-                    -
-                </div>
-                <div class="end-time">
-                    11:15
-                </div>
-                <!-- *********************************-->
-            </div>
-            <!-- execution result of task (green - good, yellow - well, red - bad)  -->
-            <div class="color-point-2"></div>
-            <!-- *********************************-->
-            <!-- task information (jira code and task name)  -->
-            <div class="worklog-content-container">
-                <div class="jira-code">
-                    JRM-310
-                </div>
-                <div class="task-field">
-                    Meeting with QA
-                </div>
-            </div>
-            <!-- *********************************-->
-            <!-- progress bar of this task  -->
-            <div class="progress-bar-container">
-                <div class="progress-bar-green"></div>
-            </div>
-            <!-- *********************************-->
-            <!-- timer of this task  -->
-            <div class="timer-value-container">
-                <div class="timer-value">01:10:00</div>
-            </div>
-            <!-- *********************************-->
-            <!-- button for run timer  -->
-            <div class="play-button">
-                <p>
-                    <img src="../assets/imgs/play-button.svg" alt="play-button">
-                </p>
-            </div>
-            <!-- *********************************-->
+        <!--   custom component worklog-create must contain the following attributes
+                         start-time - string
+                         end-time - string
+                         jira-code - string
+                         task-field - string
+                         timer-value - string
+                         color-point - 'red' or 'green' or 'yellow'
+                         -->
+        <div class="worklog-block-container">
+            <worklog-create start-time="10:00" end-time="11:15"
+                            jira-code="JRM-310" task-field="Meeting with QA"
+                            timer-value="01:10:00" color-point="green">
+            </worklog-create>
         </div>
         <!-- stroke line for separating blocks  -->
         <div class="second-line-stroke-container">
             <div class="line-stroke"></div>
         </div>
         <!-- *********************************-->
-
         <!--third element of worklog block -->
-        <div class="worklog-block-container">
-            <div class="wbc-block">
-                <div class="work-time">
-                    <div class="work-time">
-                        <div class="third-worklog-worktime">
-                            <div class="tww-content">
-                                2
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- fix this in the next time -->
-            <!-- *********************************-->
-            <div class="color-point-3"></div>
-            <div class="worklog-content-container">
-                <div class="jira-code">
-                    JRM-310
-                </div>
-                <div class="task-field">
-                    Company branding
-                </div>
-            </div>
-            <div class="progress-bar-container">
-                <div class="progress-bar-yellow"></div>
-            </div>
-            <div class="timer-value-container">
-                <div class="timer-value">03:50:00</div>
-            </div>
-            <div class="play-button">
-                <p>
-                    <img src="../assets/imgs/play-button.svg" alt="play-button">
-                </p>
-            </div>
+
+        <!--   custom component worklog-create  must contain the following attributes
+                   content-type = "drop-down" or "drop-up"
+                  block-value - string (this attribute need when u choose content-type = "drop-down" )
+                 jira-code - string
+                 task-field - string
+                 timer-value - string
+                 color-point - 'red' or 'green' or 'yellow'
+                 -->
+        <div id="WLDDL" class="worklog-block-container">
+            <nesting-worklog-create block-value="2"
+                                    jira-code="JRM-310" task-field="Company branding"
+                                    timer-value="03:50:00" color-point="yellow" content-type="drop-down">
+            </nesting-worklog-create>
         </div>
+
         <div class="second-line-stroke-container">
             <div class="line-stroke"></div>
         </div>
+        <!--*********************************************-->
+        <!--*********************************************-->
         <div class="separator-line-container">
             <p>
                 <img src="../assets/imgs/separator-line.svg" alt="separator-line">
             </p>
         </div>
-        <!--*********************************************-->
-
-        <!--*********************************************-->
-
         <!-- slider -->
         <div class="slider-times-container">
-
-
             <div class="slider-times">
                 <div>7:00</div>
                 <div>8:00</div>
@@ -284,148 +184,51 @@
 
         <!--   second date block (the same as the first block, but in it some tasks have
           different colors and execution time, as well as the date)-->
-        <div class="second-date-container">
-            <div class="date-block-container">
-                <div class="date-block-size">
-                    Tue, June 09
-                </div>
-            </div>
-            <div class="date-time">
-                08:00:00
-                <div class="progress">
-                    <div class="progress-bar-green"></div>
-                </div>
-            </div>
-            <div class="download-icon">
-                <p>
-                    <img src="../assets/imgs/download.svg" alt="download-icon">
-                </p>
-            </div>
+        <div style="width: 1085px;margin-top: 81px; margin-left: 96px;">
+            <summary-worklog date="Tue, June 09"
+                             summary-time="08:00:00"
+                             progress-value="green">
+            </summary-worklog>
         </div>
         <div class="fist-line-stroke-container">
             <div class="line-stroke"></div>
         </div>
 
-
         <div class="worklog-block-container">
-            <!-- fix this in the next time -->
-            <div class="work-time">
-                <div class="start-time">
-                    09:00
-                </div>
-                <div class="minus">
-                    -
-                </div>
-                <div class="end-time">
-                    10:00
-                </div>
-                <!-- *********************************-->
-            </div>
-            <div class="color-point-2"></div>
-            <div class="worklog-content-container">
-                <div class="jira-code">
-                    JRM-310
-                </div>
-                <div class="task-field">
-                    Team standup
-                </div>
-            </div>
-            <div class="progress-bar-container">
-                <div class="progress-bar-green"></div>
-            </div>
-            <div class="timer-value-container">
-                <div class="timer-value">03:15:00</div>
-            </div>
-            <div class="play-button">
-                <p>
-                    <img src="../assets/imgs/play-button.svg" alt="play-button">
-                </p>
-            </div>
+            <worklog-create start-time="09:00" end-time="10:00"
+                            jira-code="JRM-310" task-field="Team standup"
+                            timer-value="03:15:00" color-point="green">
+            </worklog-create>
         </div>
+
         <div class="second-line-stroke-container">
             <div class="line-stroke"></div>
         </div>
 
         <!--second block -->
         <div class="worklog-block-container">
-
-
-            <div class="work-time">
-                <div class="start-time">
-                    10:00
-                </div>
-                <div class="minus">
-                    -
-                </div>
-                <div class="end-time">
-                    11:15
-                </div>
-
-            </div>
-            <div class="color-point-2"></div>
-            <div class="worklog-content-container">
-                <div class="jira-code">
-                    JRM-310
-                </div>
-                <div class="task-field">
-                    Meeting with QA
-                </div>
-            </div>
-            <div class="progress-bar-container">
-                <div class="progress-bar-green"></div>
-            </div>
-            <div class="timer-value-container">
-                <div class="timer-value">01:15:00</div>
-            </div>
-            <div class="play-button">
-                <p>
-                    <img src="../assets/imgs/play-button.svg" alt="play-button">
-                </p>
-            </div>
+            <worklog-create start-time="10:00" end-time="11:15"
+                            jira-code="JRM-310" task-field="Meeting with QA"
+                            timer-value="01:15:00" color-point="green">
+            </worklog-create>
         </div>
+
         <div class="second-line-stroke-container">
             <div class="line-stroke"></div>
         </div>
 
 
         <div class="worklog-block-container">
-            <div class="work-time">
-                <div class="start-time">
-                    11:00
-                </div>
-                <div class="minus">
-                    -
-                </div>
-                <div class="end-time">
-                    13:15
-                </div>
-                <!-- *********************************-->
-            </div>
-
-            <div class="color-point-3"></div>
-            <div class="worklog-content-container">
-                <div class="jira-code">
-                    JRM-310
-                </div>
-                <div class="task-field">
-                    Company branding
-                </div>
-            </div>
-            <div class="progress-bar-container">
-                <div class="progress-bar-yellow"></div>
-            </div>
-            <div class="timer-value-container">
-                <div class="timer-value">03:50:00</div>
-            </div>
-            <div class="play-button">
-                <p>
-                    <img src="../assets/imgs/play-button.svg" alt="play-button">
-                </p>
-            </div>
+            <worklog-create start-time="11:00" end-time="13:15"
+                            jira-code="JRM-310" task-field="Company branding"
+                            timer-value="01:10:00" color-point="yellow">
+            </worklog-create>
         </div>
+
         <div class="second-line-stroke-container">
             <div class="line-stroke"></div>
         </div>
+
     </div>
 
     <!-- TIme tracking block  -->
@@ -437,14 +240,14 @@
                 </p>
             </div>
             <div class="TT-content">
-                <div class="timetracking-header-container">
+                <div id="dropdown" class="timetracking-header-container">
                     <div class="timetracking-header">
                         <div class="Time-tracking-logo">
                             Time tracking
                         </div>
                         <div class="more-icon-size-container">
-                            <div class="more-icon-size">
-                                <img src="../assets/imgs/more-horizontal_1.svg" alt="more-horizontal">
+                            <div id="DD-button" class="dropdown">
+                                <img class="dropbtn" src="../assets/imgs/more-horizontal_1.svg" alt="more-horizontal">
                             </div>
                         </div>
                     </div>
@@ -486,11 +289,17 @@
                 </div>
             </div>
         </div>
+
         <!-- *********************************-->
     </div>
 </div>
 
 <!--*********************************************-->
-<script src="script.js"></script>
+<script src="./script.js"></script>
+<script src="worklog/worklog.js"></script>
+<script src="worklog/NestingWorkLog.js"></script>
+<script src="worklog/WorkLogSummary.js"></script>
+<script src="worklog/ActiveIssue.js"></script>
+<script src="Calendar/DropedCalendar.js"></script>
 </body>
 </html>

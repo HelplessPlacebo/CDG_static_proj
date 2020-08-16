@@ -1,4 +1,5 @@
 
+/*show google calendar sync toggle */
 $('#GCS-toggle').on('click', function () {
     if ($(this).is(':checked')) {
         $(' <div id="CSC" class="calendar-syncs-container">\n' +
@@ -49,3 +50,32 @@ $('#GCS-toggle').on('click', function () {
         $("#CSC").remove()
     }
 })
+
+
+/* fix this in the next time*/
+
+$("#DD-button").addClass("open");
+
+$('#DD-button').on('click', function (e) {
+
+    if ($(this).hasClass("open")) {
+        $("<div>\n" +
+            "                                <div id=\"dropdown-menu\"   class=\"dropdown-content\">\n" +
+            "                                    <a href=\"#\">Jira link</a>\n" +
+            "                                    <a href=\"#\">Duplicate</a>\n" +
+            "                                    <a href=\"#\">Add to favorite</a>\n" +
+            "                                    <a href=\"#\">Delete</a>\n" +
+            "                                </div></div>").appendTo("#dropdown")
+        $(this).removeClass("open");
+    } else {
+        $(this).addClass("open");
+        $("#dropdown-menu").remove()
+    }
+})
+
+/* fix this in the next time*/
+
+/*show more worklogs */
+
+
+
