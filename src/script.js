@@ -1,8 +1,11 @@
-
+let GSCCheckBox = document.getElementById("GCS-toggle")
 /*show google calendar sync toggle */
-$('#GCS-toggle').on('click', function () {
-    if ($(this).is(':checked')) {
-        $(' <div id="CSC" class="calendar-syncs-container">\n' +
+const GSCHandler = (e) =>{
+
+    let GCS = document.getElementById("GCS")
+    if(GSCCheckBox.checked){
+        let el = document.createElement("div")
+        el.innerHTML = ' <div id="CSC" class="calendar-syncs-container">\n' +
             '                <div class="calendar-syncs">\n' +
             '                    <div class="calendar-sync">\n' +
             '                        <div class="sync-color-point-container">\n' +
@@ -45,33 +48,40 @@ $('#GCS-toggle').on('click', function () {
             '                    </div>\n' +
             '                </div>\n' +
             '            </div>'
-        ).appendTo("#GCS");
-    } else {
-        $("#CSC").remove()
+        GCS.append(el)
     }
-})
+    else{
 
+        ToDell = document.getElementById("CSC")
+        ToDell.remove()
+    }
+}
 
+GSCCheckBox.addEventListener("click",(event)=>GSCHandler(event))
 /* fix this in the next time*/
 
-$("#DD-button").addClass("open");
+const TimeTrackingDD = document.getElementById("DD-button")
+TimeTrackingDD.classList.add("open")
+TimeTrackingDD.addEventListener("click", (event)=>DropDownMenu(event,"dropdown"))
 
-$('#DD-button').on('click', function (e) {
-
-    if ($(this).hasClass("open")) {
-        $("<div>\n" +
-            "                                <div id=\"dropdown-menu\"   class=\"dropdown-content\">\n" +
-            "                                    <a href=\"#\">Jira link</a>\n" +
-            "                                    <a href=\"#\">Duplicate</a>\n" +
-            "                                    <a href=\"#\">Add to favorite</a>\n" +
-            "                                    <a href=\"#\">Delete</a>\n" +
-            "                                </div></div>").appendTo("#dropdown")
-        $(this).removeClass("open");
-    } else {
-        $(this).addClass("open");
-        $("#dropdown-menu").remove()
-    }
-})
+// $("#DD-button").addClass("open");
+//
+// $('#DD-button').on('click', function (e) {
+//
+//     if ($(this).hasClass("open")) {
+//         $("<div>\n" +
+//             "                                <div id=\"dropdown-menu\"   class=\"dropdown-content\">\n" +
+//             "                                    <a href=\"#\">Jira link</a>\n" +
+//             "                                    <a href=\"#\">Duplicate</a>\n" +
+//             "                                    <a href=\"#\">Add to favorite</a>\n" +
+//             "                                    <a href=\"#\">Delete</a>\n" +
+//             "                                </div></div>").appendTo("#dropdown")
+//         $(this).removeClass("open");
+//     } else {
+//         $(this).addClass("open");
+//         $("#dropdown-menu").remove()
+//     }
+// })
 
 /* fix this in the next time*/
 

@@ -53,31 +53,8 @@ class ActiveIssue extends HTMLElement {
 </div>`
     }
 }
-
 window.customElements.define("active-issue", ActiveIssue);
 
-const ActiveIssueShowMore = (e, clickedEl) => {
-    console.log("wwe")
-    let AIroot = document.getElementById("AI")
-
-    if (clickedEl.classList.contains("open")) {
-        let DropedMenu = document.createElement("div")
-        DropedMenu.innerHTML = `<div>
-                                <div id="dropdown-menu-active-issue"   class="dropdown-content">
-                                  <a href="#">Jira link</a>
-                                   <a href="#">Duplicate</a>
-                                     <a href="#">Add to favorite</a>
-                                     <a href="#">Delete</a>
-                                   </div></div>`
-        AIroot.append(DropedMenu)
-        clickedEl.classList.remove("open")
-    } else {
-        DDmenu = document.getElementById("dropdown-menu-active-issue")
-        DDmenu.remove()
-        clickedEl.classList.add("open")
-        // add class play to this el and remove element with id dropdown-menu-active-issue
-    }
-}
 
 //////////////////////  FIX THIS TRASH IN THE NEXT TIME  ///////////////////////////
 const IssuesPlayAndStopHandler = (e, clickedButton) => {
@@ -104,7 +81,7 @@ const IssuesPlayAndStopHandler = (e, clickedButton) => {
             ActiveIssueShowMoreButton.forEach((AISBEl) => {
                 AISBEl.classList.add("open")
                 AISBEl.addEventListener("click", (event) => {
-                    ActiveIssueShowMore(event, clickedEl)
+                    DropDownMenu(event,"AI")
                 })
             })
 
@@ -124,7 +101,6 @@ const IssuesPlayAndStopHandler = (e, clickedButton) => {
         }
     }
 }
-
 
 let playbuttons = document.querySelectorAll('.play-button');
 playbuttons.forEach((playbuttonEl) => playbuttonEl.addEventListener(`click`,
