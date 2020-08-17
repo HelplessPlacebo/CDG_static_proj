@@ -64,24 +64,6 @@ const TimeTrackingDD = document.getElementById("DD-button")
 TimeTrackingDD.classList.add("open")
 TimeTrackingDD.addEventListener("click", (event)=>DropDownMenu(event,"dropdown"))
 
-// $("#DD-button").addClass("open");
-//
-// $('#DD-button').on('click', function (e) {
-//
-//     if ($(this).hasClass("open")) {
-//         $("<div>\n" +
-//             "                                <div id=\"dropdown-menu\"   class=\"dropdown-content\">\n" +
-//             "                                    <a href=\"#\">Jira link</a>\n" +
-//             "                                    <a href=\"#\">Duplicate</a>\n" +
-//             "                                    <a href=\"#\">Add to favorite</a>\n" +
-//             "                                    <a href=\"#\">Delete</a>\n" +
-//             "                                </div></div>").appendTo("#dropdown")
-//         $(this).removeClass("open");
-//     } else {
-//         $(this).addClass("open");
-//         $("#dropdown-menu").remove()
-//     }
-// })
 
 /* fix this in the next time*/
 

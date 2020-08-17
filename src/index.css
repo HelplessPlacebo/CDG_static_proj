@@ -802,12 +802,12 @@ input:checked[type="checkbox"]::before {
 /***********************************************/
 /* Change color of dropdown links on hover */
 .droped-calendar {
-
-    margin-top: 29px;
+    margin-top: 45px;
     position: absolute;
     width: 462px;
     height: 472px;
     border-radius: 10px;
+    background: #FFFFFF;
 }
 
 .droped-calendar-header {
@@ -827,12 +827,14 @@ input:checked[type="checkbox"]::before {
     margin-left: 63px;
     margin-top: 36px;
     width: 340px;
-    height: 273px;
+    height: 305px;
+
 }
 
 .droped-calendar-content {
     display: grid;
     grid : repeat(6,27px)/repeat(7,25px);
+    grid-gap: 27px;
 }
 
 .droped-calendar-footer-container {
@@ -844,22 +846,77 @@ input:checked[type="checkbox"]::before {
 
 .droped-calendar-footer {
     display: grid;
-    grid-template-columns: 51px 80px 61px;
+    grid-template-columns: 51px 84px 61px;
     grid-template-rows: 14px;
     grid-column-gap: 15px;
 }
 
 .droped-calendar-footer-el {
-    display: flex;
-    flex-direction: column;
-    margin-left: 5px;
+  display: grid;
+    grid-template-columns: 21px 1fr;
+    grid-column-gap: 5px;
 }
-.droped-calendar-progress-line{
+
+.droped-calendar-progress-line-red{
+     width: 20px;
+     height: 6px;
+     border: 1px solid #FFFFFF;
+     border-radius: 48px;
+     background: #E34040;
+
+ }
+.droped-calendar-progress-line-green{
     width: 20px;
     height: 6px;
     border: 1px solid #FFFFFF;
     border-radius: 48px;
     background: #62D2B1;
+
+}
+.droped-calendar-progress-line-yellow{
+    width: 20px;
+    height: 6px;
+    border: 1px solid #FFFFFF;
+    border-radius: 48px;
+    background: #FFCC40;
+}
+.droped-calendar-progress-status{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 13px;
+    color: #898989;
+}
+.calendar-day{
+    display: grid;
+    grid-template-columns: 25px;
+    grid-template-rows: 25px 6px;
+    grid-row-gap: 2px;
+}
+.calendar-day-number{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #444444;
+}
+.calendar-day-names{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #999999;
+}
+.calendar-day-number-disabled{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #CCCCCC;
 }
 
 /***********************************************/

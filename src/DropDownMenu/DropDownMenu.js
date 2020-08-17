@@ -1,10 +1,10 @@
-const DropDownMenu = (e, RootElId) => {
+const DropDownMenu = (e, RootElId,MenuId) => {
     const clickedEl = e.currentTarget
     let rootEl = document.getElementById(RootElId)
     if (clickedEl.classList.contains("open")) {
         let DropedMenu = document.createElement("div")
         DropedMenu.innerHTML = `<div>
-                                <div id="dropdown-menu"   class="dropdown-content">
+                                <div id=${MenuId}  class="dropdown-content">
                                   <a href="#">Jira link</a>
                                    <a href="#">Duplicate</a>
                                      <a href="#">Add to favorite</a>
@@ -13,7 +13,7 @@ const DropDownMenu = (e, RootElId) => {
         rootEl.append(DropedMenu)
         clickedEl.classList.remove("open")
     } else {
-        DDmenu = document.getElementById("dropdown-menu")
+       let  DDmenu = document.getElementById("dropdown-menu")
         DDmenu.remove()
         clickedEl.classList.add("open")
     }
