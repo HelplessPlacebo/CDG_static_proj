@@ -7,10 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CDG_static</title>
     <link rel="stylesheet" href="./index.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 </head>
 
-<body>
+<body id="body">
 <!--********************* Nav bar ***********-->
 <header>
     <div class="nav-container">
@@ -50,8 +54,8 @@
 <div id="main-wrapper" class="main-wrapper">      <!-- it's a body of all page  -->
     <div>
         <!--********************* Fist line of body content (calendar and 2  sorting buttons) ***********-->
-        <div  class="calendar-All-Favorites-wrapper">
-            <div id="calendar-id"   class="calendar-container">
+        <div class="calendar-All-Favorites-wrapper">
+            <div id="calendar-id" class="calendar-container">
                 <div class="calendar-content">
                     <div class="calendar-date">
                         10 june 2020
@@ -63,12 +67,12 @@
                 </div>
             </div>
             <!--********************* sorting buttons ***********-->
-            <div class="all-button-bg">
-                <div class="all-button-content">
+            <div id="AllButton" class="all-button-bg-active">
+                <div class="all-button-content-active">
                     All
                 </div>
             </div>
-            <div class="favorites-button-container">
+            <div id="favorites-button-container" class="favorites-button-container">
                 <div class="favorites-button">
                     Favorites
                 </div>
@@ -80,157 +84,160 @@
         <!--********************* Worklog block  ***********-->
 
         <!--********************* first line of  Worklog block (created date + summary timer value + download button) ***********-->
-        <div style=" width: 1085px;margin-top: 50px; margin-left: 96px;">
-            <summary-worklog date="Wed, June 10"
-                             summary-time="06:05:00"
-                             progress-value="yellow">
+        <div id="main-content-root">
+            <div style=" width: 1085px;margin-top: 50px; margin-left: 96px;">
+                <summary-worklog date="Wed, June 10"
+                                 summary-time="06:05:00"
+                                 progress-value="yellow">
+                </summary-worklog>
+            </div>
+            <div class="fist-line-stroke-container">
+                <div class="line-stroke"></div>
+            </div>
+            <!--*********************************************-->
 
-            </summary-worklog>
-        </div>
-        <div class="fist-line-stroke-container">
-            <div class="line-stroke"></div>
-        </div>
-        <!--*********************************************-->
+            <!--********************* here is all part of  first worklog***********-->
 
-        <!--********************* here is all part of  first worklog***********-->
+            <!--   custom component worklog-create must contain the following attributes
+              start-time - string
+              end-time - string
+              jira-code - string
+              task-field - string
+              timer-value - string
+              color-point - 'red' or 'green' or 'yellow'
+              -->
+            <div id="firs-worklog-block-root">
+                <div class="worklog-block-container">
+                    <worklog-create start-time="09:00" end-time="10:00"
+                                    jira-code="JRM-310" task-field="Team standup"
+                                    timer-value="01:00:00" color-point="red">
+                    </worklog-create>
+                </div>
 
-        <!--   custom component worklog-create must contain the following attributes
-          start-time - string
-          end-time - string
-          jira-code - string
-          task-field - string
-          timer-value - string
-          color-point - 'red' or 'green' or 'yellow'
-          -->
-        <div class="worklog-block-container">
-            <worklog-create start-time="09:00" end-time="10:00"
-                            jira-code="JRM-310" task-field="Team standup"
-                            timer-value="01:00:00" color-point="red">
-            </worklog-create>
-        </div>
+                <div class="second-line-stroke-container">
+                    <div class="line-stroke"></div>
+                </div>
+                <!--*********************************************-->
 
-        <div class="second-line-stroke-container">
-            <div class="line-stroke"></div>
-        </div>
-        <!--*********************************************-->
+                <!--second element of worklog block -->
 
-        <!--second element of worklog block -->
+                <!--   custom component worklog-create must contain the following attributes
+                                 start-time - string
+                                 end-time - string
+                                 jira-code - string
+                                 task-field - string
+                                 timer-value - string
+                                 color-point - 'red' or 'green' or 'yellow'
+                                 -->
+                <div class="worklog-block-container">
+                    <worklog-create control-button-status="play" start-time="10:00" end-time="11:15"
+                                    jira-code="JRM-310" task-field="Meeting with QA"
+                                    timer-value="01:10:00" color-point="green">
+                    </worklog-create>
+                </div>
+                <!-- stroke line for separating blocks  -->
+                <div class="second-line-stroke-container">
+                    <div class="line-stroke"></div>
+                </div>
+                <!-- *********************************-->
+                <!--third element of worklog block -->
 
-        <!--   custom component worklog-create must contain the following attributes
-                         start-time - string
-                         end-time - string
+                <!--   custom component worklog-create  must contain the following attributes
+                           content-type = "drop-down" or "drop-up"
+                          block-value - string (this attribute need when u choose content-type = "drop-down" )
                          jira-code - string
                          task-field - string
                          timer-value - string
                          color-point - 'red' or 'green' or 'yellow'
                          -->
-        <div class="worklog-block-container">
-            <worklog-create start-time="10:00" end-time="11:15"
-                            jira-code="JRM-310" task-field="Meeting with QA"
-                            timer-value="01:10:00" color-point="green">
-            </worklog-create>
-        </div>
-        <!-- stroke line for separating blocks  -->
-        <div class="second-line-stroke-container">
-            <div class="line-stroke"></div>
-        </div>
-        <!-- *********************************-->
-        <!--third element of worklog block -->
+                <div id="WLDDL" class="worklog-block-container">
+                    <nesting-worklog-create block-value="2"
+                                            jira-code="JRM-310" task-field="Company branding"
+                                            timer-value="03:50:00" color-point="yellow" content-type="drop-down">
+                    </nesting-worklog-create>
+                </div>
 
-        <!--   custom component worklog-create  must contain the following attributes
-                   content-type = "drop-down" or "drop-up"
-                  block-value - string (this attribute need when u choose content-type = "drop-down" )
-                 jira-code - string
-                 task-field - string
-                 timer-value - string
-                 color-point - 'red' or 'green' or 'yellow'
-                 -->
-        <div id="WLDDL" class="worklog-block-container">
-            <nesting-worklog-create block-value="2"
-                                    jira-code="JRM-310" task-field="Company branding"
-                                    timer-value="03:50:00" color-point="yellow" content-type="drop-down">
-            </nesting-worklog-create>
-        </div>
+                <div class="second-line-stroke-container">
+                    <div class="line-stroke"></div>
+                </div>
+                <!--*********************************************-->
+                <!--*********************************************-->
+                <div class="separator-line-container">
+                    <p>
+                        <img src="../assets/imgs/separator-line.svg" alt="separator-line">
+                    </p>
+                </div>
 
-        <div class="second-line-stroke-container">
-            <div class="line-stroke"></div>
-        </div>
-        <!--*********************************************-->
-        <!--*********************************************-->
-        <div class="separator-line-container">
-            <p>
-                <img src="../assets/imgs/separator-line.svg" alt="separator-line">
-            </p>
-        </div>
-        <!-- slider -->
-        <div class="slider-times-container">
-            <div class="slider-times">
-                <div>7:00</div>
-                <div>8:00</div>
-                <div>9:00</div>
-                <div>10:00</div>
-                <div>11:00</div>
-                <div>12:00</div>
-                <div>13:00</div>
-                <div>14:00</div>
-                <div>15:00</div>
-                <div>16:00</div>
-                <div>17:00</div>
-                <div>18:00</div>
-                <div>19:00</div>
             </div>
-        </div>
-        <!--*********************************************-->
+            <!-- slider -->
+            <div class="slider-times-container">
+                <div class="slider-times">
+                    <div>7:00</div>
+                    <div>8:00</div>
+                    <div>9:00</div>
+                    <div>10:00</div>
+                    <div>11:00</div>
+                    <div>12:00</div>
+                    <div>13:00</div>
+                    <div>14:00</div>
+                    <div>15:00</div>
+                    <div>16:00</div>
+                    <div>17:00</div>
+                    <div>18:00</div>
+                    <div>19:00</div>
+                </div>
+            </div>
+            <!--*********************************************-->
 
-        <!--   second date block (the same as the first block, but in it some tasks have
-          different colors and execution time, as well as the date)-->
-        <div style="width: 1085px;margin-top: 81px; margin-left: 96px;">
-            <summary-worklog date="Tue, June 09"
-                             summary-time="08:00:00"
-                             progress-value="green">
-            </summary-worklog>
-        </div>
-        <div class="fist-line-stroke-container">
-            <div class="line-stroke"></div>
-        </div>
+            <!--   second date block (the same as the first block, but in it some tasks have
+              different colors and execution time, as well as the date)-->
+            <div style="width: 1085px;margin-top: 81px; margin-left: 96px;">
+                <summary-worklog date="Tue, June 09"
+                                 summary-time="08:00:00"
+                                 progress-value="green">
+                </summary-worklog>
+            </div>
+            <div class="fist-line-stroke-container">
+                <div class="line-stroke"></div>
+            </div>
 
-        <div class="worklog-block-container">
-            <worklog-create start-time="09:00" end-time="10:00"
-                            jira-code="JRM-310" task-field="Team standup"
-                            timer-value="03:15:00" color-point="green">
-            </worklog-create>
+            <div class="worklog-block-container">
+                <worklog-create control-button-status="play" start-time="09:00" end-time="10:00"
+                                jira-code="JRM-310" task-field="Team standup"
+                                timer-value="03:15:00" color-point="green">
+                </worklog-create>
+            </div>
+
+            <div class="second-line-stroke-container">
+                <div class="line-stroke"></div>
+            </div>
+
+            <!--second block -->
+            <div class="worklog-block-container">
+                <worklog-create control-button-status="play" start-time="10:00" end-time="11:15"
+                                jira-code="JRM-310" task-field="Meeting with QA"
+                                timer-value="01:15:00" color-point="green">
+                </worklog-create>
+            </div>
+
+            <div class="second-line-stroke-container">
+                <div class="line-stroke"></div>
+            </div>
+
+
+            <div class="worklog-block-container">
+                <worklog-create control-button-status="play" start-time="11:00" end-time="13:15"
+                                jira-code="JRM-310" task-field="Company branding"
+                                timer-value="01:10:00" color-point="yellow">
+                </worklog-create>
+            </div>
+
+            <div class="second-line-stroke-container">
+                <div class="line-stroke"></div>
+            </div>
+
         </div>
-
-        <div class="second-line-stroke-container">
-            <div class="line-stroke"></div>
-        </div>
-
-        <!--second block -->
-        <div class="worklog-block-container">
-            <worklog-create start-time="10:00" end-time="11:15"
-                            jira-code="JRM-310" task-field="Meeting with QA"
-                            timer-value="01:15:00" color-point="green">
-            </worklog-create>
-        </div>
-
-        <div class="second-line-stroke-container">
-            <div class="line-stroke"></div>
-        </div>
-
-
-        <div class="worklog-block-container">
-            <worklog-create start-time="11:00" end-time="13:15"
-                            jira-code="JRM-310" task-field="Company branding"
-                            timer-value="01:10:00" color-point="yellow">
-            </worklog-create>
-        </div>
-
-        <div class="second-line-stroke-container">
-            <div class="line-stroke"></div>
-        </div>
-
     </div>
-
     <!-- TIme tracking block  -->
     <div class="TImeTracking_and_Calendar">
         <div class="TT-layout">
@@ -247,21 +254,27 @@
                         </div>
                         <div class="more-icon-size-container">
                             <div id="DD-button" class="dropdown">
-                                <img class="dropbtn" src="../assets/imgs/more-horizontal_1.svg" alt="more-horizontal">
+                                <img class="dropbtn"
+                                     src="../assets/imgs/more-horizontal_1.svg"
+                                     alt="more-horizontal">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="New-worklog-container">
-                    <div class="New-worklog">
-                        <div class="new-worklog-button-pose">
-                            <img class="new-worklog-button-size"
-                                 src="../assets/imgs/new_worklog_button.svg"
-                                 alt="new_worklog_button">
-                        </div>
-                        <div class="new-worklog-button-description-container">
-                            <div class="new-worklog-button-description">
-                                new worklog
+                <div id="TT-main-content-root" class="TT-main-content-root">
+                    <div class="New-worklog-container">
+                        <div class="New-worklog">
+                            <div class="new-worklog-button-pose">
+                                <div class="js-open-modal" data-modal="1">
+                                    <img class="new-worklog-button-size"
+                                         src="../assets/imgs/new_worklog_button.svg"
+                                         alt="new_worklog_button">
+                                </div>
+                            </div>
+                            <div class="new-worklog-button-description-container">
+                                <div class="new-worklog-button-description">
+                                    new worklog
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -283,16 +296,75 @@
                     <input id="GCS-toggle"
                            type="checkbox">
                 </div>
-                <div class="GCS-calendar-pose">
+                <div id="small-calendar" class="GCS-calendar-pose">
                     <img src="../assets/imgs/calendar_gray.svg"
-                         alt="calendar">
+                         alt="small-calendar">
+                </div>
+            </div>
+
+
+            <!-- *********************************-->
+        </div>
+    </div>
+</div>
+
+<!-- Несколько модальных окон -->
+
+<div class="modal" data-modal="1">
+    <div class="modal_title">New worklog</div>
+    <div class="modal-slider">
+        <div class="sliderContainer">
+            <div id="time-range">
+                <div class="sliders_step1">
+                    <div id="slider-range"> </div>
+
                 </div>
             </div>
         </div>
-
-        <!-- *********************************-->
     </div>
+    <form name="NewWorklogContent" action="">
+        <div class="modal-text-fields">
+            <div class="new-worklog-content-container">
+
+                <div class="new-worklog-content-title ">Worklog name</div>
+                <input
+                        name="NewWorklogName"
+                        class="new-worklog-content-input"
+                        placeholder="Enter the worklog name"
+                        type="text">
+                <div id="new-worklog-name-err"></div>
+
+                <div style="margin-top: 22px;">
+                    <div class="new-worklog-content-title ">Issue</div>
+                    <input
+                            name="NewIssueName"
+                            class="new-worklog-content-input"
+                            placeholder="Enter the issue name"
+                            type="text">
+                </div>
+                <div id="new-issue-err"></div>
+            </div>
+        </div>
+        <div class="new-worklog-control-buttons-container">
+            <div class="new-worklog-control-buttons">
+                <div class="js-modal-submit">
+                    <img class="new-worklog-submit-button-size"
+                         src="../assets/imgs/confirmButton.svg">
+                </div>
+                <div class="js-modal-close">
+                    <img class="new-worklog-control-button"
+                         src="../assets/imgs/declineButton.svg">
+                </div>
+            </div>
+        </div>
+    </form>
+
+
 </div>
+
+<!-- Подложка под модальным окном -->
+<div class="overlay js-overlay-modal"></div>
+
 
 <!--*********************************************-->
 <script src="./script.js"></script>
@@ -302,5 +374,9 @@
 <script src="worklog/ActiveIssue.js"></script>
 <script src="Calendar/DropedCalendar.js"></script>
 <script src="DropDownMenu/DropDownMenu.js"></script>
+<script src="modal/Modal.js"></script>
+<script src="TimeTracker/TimeTracker.js"></script>
+<script src="Favorites/Favorites.js"></script>
+<script src="slider/slider1.js"></script>
 </body>
 </html>

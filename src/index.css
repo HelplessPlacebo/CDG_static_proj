@@ -1,19 +1,27 @@
 body {
     padding: 0;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', serif;
     background-color: #F9FAFC;
+    overflow-x : hidden
 }
 
 @font-face {
-
     font-family: 'Roboto', serif;
     src: url(../assets/roboto/Roboto-Regular.woff2) format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: fallback;
 }
-
+@media (max-width: 1500px) {
+    body {
+        padding: 0;
+        margin: 0;
+        font-family: 'Roboto', serif;
+        background-color: #F9FAFC;
+        overflow-x : initial;
+    }
+}
 /*********************** Navbar **********************  */
 .nav-container {
     background: #3744BD;
@@ -96,11 +104,10 @@ body {
     margin-top: 51px;
     display: grid;
     grid-template-columns: 1296px 624px;
-    grid-template-rows: 937px;
 }
 
 
-/*Time Tracking & Calendar sync*/
+/*Time Tracking & CalendarReducer sync*/
 .TImeTracking_and_Calendar {
     display: grid;
     grid-template-rows: 363px 497px;
@@ -113,13 +120,13 @@ body {
     width: 1069px;
     margin-left: 96px;
     display: grid;
-    grid-template-columns: 893px 79px 97px;
+    grid-template-columns: 893px 79px 1fr;
     grid-template-rows: 58px;
 }
 
 /***********************************************/
 
-/***********************  Calendar **********************  */
+/***********************  CalendarReducer **********************  */
 
 
 .calendar-container {
@@ -143,7 +150,6 @@ body {
 }
 
 .calendar-date {
-
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -158,13 +164,25 @@ body {
 /***********************************************/
 
 /***********************    Button ALL ********************** * */
-.all-button-bg {
+.all-button-bg-active {
     margin-top: 6px;
     margin-bottom: 5px;
     width: 79px;
     height: 47px;
     background: #F0F3F5;
     border-radius: 30px;
+}
+
+.all-button-content-active {
+    margin-top: 10px;
+    margin-left: 27px;
+    margin-bottom: 18px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 144.2%;
+    color: #4F4F4F;
+    cursor: pointer;
 }
 
 .all-button-content {
@@ -175,17 +193,36 @@ body {
     font-weight: 500;
     font-size: 18px;
     line-height: 144.2%;
-    color: #4F4F4F;
+    color: #C4CACB;
+
+}
+
+.all-button-bg {
+    margin-top: 6px;
+    margin-bottom: 5px;
+    width: 79px;
+    height: 47px;
+    cursor: pointer;
 }
 
 /***********************************************/
 
-/**********************   Button Favorites ********************** */
+/**********************   Button FavoritesButton ********************** */
 .favorites-button-container {
     margin-left: 21px;
     margin-top: 16px;
     width: 76px;
     height: 19px;
+    cursor: pointer;
+}
+
+.favorites-button-container-active {
+    margin-top: 5px;
+    width: 133px;
+    height: 47px;
+    background-color: #F0F3F5;
+    border-radius: 30px;
+    cursor: pointer;
 }
 
 .favorites-button {
@@ -194,6 +231,18 @@ body {
     font-size: 18px;
     line-height: 144.2%;
     color: #BBBBBB;
+}
+
+.favorites-button-active {
+    margin-top: 10px;
+    margin-left: 31px;
+    margin-bottom: 18px;
+    margin-right: 21px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 144.2%;
+    color: #4F4F4F;
 }
 
 /***********************************************/
@@ -279,16 +328,17 @@ body {
 
 /***************  line stroke ******************/
 .line-stroke {
-    margin-left: 72px;
     width: 1140px;
     border: 1px solid #E9ECF2;
 }
 
 .fist-line-stroke-container {
+    margin-left: 72px;
     margin-top: 34px;
 }
 
 .second-line-stroke-container {
+    margin-left: 72px;
     margin-top: 7px;
 }
 
@@ -296,25 +346,40 @@ body {
 
 /***************  worlog block ******************/
 .worklog-block-container {
-    width: 1141px;
+    width: 1200px;
     margin-top: 5px;
     margin-left: 73px;
-
 }
 
-.active-worklog-block-container {
-    width: 1147px;
+.worklog-active{
+}
+
+.worklog-block-container :hover .worklog-active{
+    width: 1160px;
     background-color: #FFFFFF;
+    height: 86px;
     border-radius: 10px;
 }
 
+.worklog-block-container:hover .more-issue{
+    display: block;
+    z-index: -100;
+}
 .worklog-block {
+    display: grid;
+    grid-template-columns: 185px 31px 574px 159px 83px 75px 70px;
+    grid-template-rows: 76px;
+}
+
+.nesting-worklog-block {
     display: grid;
     grid-template-columns: 185px 31px 574px 159px 83px 75px;
     grid-template-rows: 76px;
 }
 
+
 .active-worklog-block {
+
     display: grid;
     grid-template-columns: 185px 31px 574px 159px 83px 75px 75px;
     grid-template-rows: 86.3px;
@@ -364,18 +429,21 @@ body {
     width: 3.25px;
     background: #E34040;
     border-radius: 1px;
+    height: 76px;
 }
 
 .color-point-2 {
     width: 3.25px;
     background: #62D2B1;
     border-radius: 1px;
+    height: 76px;
 }
 
 .color-point-3 {
     width: 3.25px;
     background: #FFCC40;
     border-radius: 1px;
+    height: 76px;
 }
 
 /*****************************************/
@@ -443,14 +511,15 @@ body {
     color: #BBBBBB;
 }
 
-.play-button {
+.control-buttons-container {
     margin-top: 7px;
     margin-left: 37px;
 }
 
+.play-button {
+}
+
 .stop-button {
-    margin-top: 7px;
-    margin-left: 37px;
 }
 
 /***********************************************/
@@ -539,10 +608,15 @@ body {
     height: 363px;
 }
 
+.TT-main-content-root {
+
+}
+
 .timetracking-header {
     display: grid;
     grid-template-columns: 505px 24px;
     grid-template-rows: 32px;
+
 }
 
 .Time-tracking-logo {
@@ -568,6 +642,7 @@ body {
     margin-left: 274px;
     margin-top: 84px;
 }
+
 
 .New-worklog {
     width: 112px;
@@ -600,9 +675,10 @@ body {
 }
 
 .more-issue {
-    z-index: -5;
-    margin-left: 16px;
+    display: none;
+    padding-left: 37px;
 }
+
 
 /***********************************************/
 
@@ -765,9 +841,9 @@ input:checked[type="checkbox"]::before {
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     position: absolute;
-    background-color: #f1f1f1;
+    background-color: #FFFFFF;
     min-width: 169px;
-    max-height: 192px;
+    max-height: 250px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 300;
     font-style: normal;
@@ -784,14 +860,16 @@ input:checked[type="checkbox"]::before {
 /* Links inside the dropdown */
 .dropdown-content a {
     color: black;
-    padding: 12px 16px;
+    padding-left: 32px;
+    padding-bottom: 12px;
+    padding-top: 10px;
     text-decoration: none;
     display: block;
 }
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-    background-color: #ddd
+    background-color: #E3F3FF
 }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
@@ -817,7 +895,7 @@ input:checked[type="checkbox"]::before {
     line-height: 19px;
     color: #000000;
     text-align: center;
-    margin-top: 37px ;
+    margin-top: 37px;
     margin-left: 62px;
     width: 338px;
     height: 19px;
@@ -833,7 +911,7 @@ input:checked[type="checkbox"]::before {
 
 .droped-calendar-content {
     display: grid;
-    grid : repeat(6,27px)/repeat(7,25px);
+    grid: repeat(6, 27px)/repeat(7, 25px);
     grid-gap: 27px;
 }
 
@@ -852,48 +930,83 @@ input:checked[type="checkbox"]::before {
 }
 
 .droped-calendar-footer-el {
-  display: grid;
+    display: grid;
     grid-template-columns: 21px 1fr;
     grid-column-gap: 5px;
 }
 
-.droped-calendar-progress-line-red{
-     width: 20px;
-     height: 6px;
-     border: 1px solid #FFFFFF;
-     border-radius: 48px;
-     background: #E34040;
+.droped-calendar-progress-line-red {
+    width: 20px;
+    height: 6px;
+    border: 1px solid #FFFFFF;
+    border-radius: 48px;
+    background: #E34040;
 
- }
-.droped-calendar-progress-line-green{
+}
+
+.droped-calendar-progress-line-red-faded {
+    width: 20px;
+    height: 6px;
+    border: 1px solid #FFFFFF;
+    border-radius: 48px;
+    background: #E34040;
+    opacity: 30%;
+}
+
+.DCPL-container {
+    margin-left: 2px;
+}
+
+.droped-calendar-progress-line-green {
     width: 20px;
     height: 6px;
     border: 1px solid #FFFFFF;
     border-radius: 48px;
     background: #62D2B1;
-
 }
-.droped-calendar-progress-line-yellow{
+
+.droped-calendar-progress-line-green-faded {
+    width: 20px;
+    height: 6px;
+    border: 1px solid #FFFFFF;
+    border-radius: 48px;
+    background: #62D2B1;
+    opacity: 30%;
+}
+
+.droped-calendar-progress-line-yellow {
     width: 20px;
     height: 6px;
     border: 1px solid #FFFFFF;
     border-radius: 48px;
     background: #FFCC40;
 }
-.droped-calendar-progress-status{
+
+.droped-calendar-progress-line-yellow-faded {
+    width: 20px;
+    height: 6px;
+    border: 1px solid #FFFFFF;
+    border-radius: 48px;
+    background: #FFCC40;
+    opacity: 30%;
+}
+
+.droped-calendar-progress-status {
     font-style: normal;
     font-weight: normal;
     font-size: 11px;
     line-height: 13px;
     color: #898989;
 }
-.calendar-day{
+
+.calendar-day {
     display: grid;
     grid-template-columns: 25px;
     grid-template-rows: 25px 6px;
     grid-row-gap: 2px;
 }
-.calendar-day-number{
+
+.calendar-day-number {
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -901,7 +1014,8 @@ input:checked[type="checkbox"]::before {
     text-align: center;
     color: #444444;
 }
-.calendar-day-names{
+
+.calendar-day-names {
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -910,7 +1024,8 @@ input:checked[type="checkbox"]::before {
     text-transform: uppercase;
     color: #999999;
 }
-.calendar-day-number-disabled{
+
+.calendar-day-number-disabled {
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -920,3 +1035,504 @@ input:checked[type="checkbox"]::before {
 }
 
 /***********************************************/
+/************************************* Modal Window **************************/
+/* Стили для подложки */
+
+.overlay {
+
+    /* Скрываем подложку  */
+    opacity: 0;
+    visibility: hidden;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 20;
+    transition: .3s all;
+}
+
+
+/* Стили для модальных окон */
+.sliderContainer{
+
+}
+.modal {
+    width: 660px;
+    height: 470px;
+    /* Скрываем окна  */
+    opacity: 0;
+    visibility: hidden;
+
+    /*  Центрируем и задаем z-index */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 30; /* Должен быть выше чем у подложки*/
+
+    /*  Побочные стили   */
+    box-shadow: 0 3px 10px -.5px rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    transition: 0.3s all;
+}
+
+
+/* Стили для активных классов подложки и окна */
+
+.modal.active,
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Стили для кнопки закрытия */
+.modal_title {
+    margin-top: 30px;
+    margin-left: 56px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 144.2%;
+    color: #1E1E1E;
+
+}
+
+.modal-slider {
+    margin-left: 56px;
+    margin-top: 76px;
+    width: 543px;
+    height: 54px;
+}
+
+.modal-text-fields {
+    width: 543px;
+    height: 124px;
+    margin-left: 56px;
+    margin-top: 60px;
+}
+
+.new-worklog-content-container {
+
+}
+
+.new-worklog-content-title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 144.2%;
+    color: #4F4F4F;
+}
+
+.new-worklog-content-input {
+    width: 543px;
+    margin-top: 6px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 144.2%;
+    color: #C4CACB;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #E9ECF2;
+}
+
+.new-worklog-control-buttons-container {
+    margin-top: 20px;
+    margin-left: 240px;
+    width: 117px;
+    height: 46px;
+
+}
+
+.new-worklog-control-buttons {
+    width: 117px;
+    height: 46px;
+    display: inline-flex;
+}
+
+.js-modal-submit {
+
+}
+
+.new-worklog-submit-button-size {
+
+}
+
+.new-worklog-control-button {
+    margin-top: 9.3px;
+    margin-left: 27px;
+}
+
+.new-worklog-submit-button {
+    outline: none;
+    width: 45px;
+    height: 45px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent url('../assets/imgs/confirmButton.svg') no-repeat center top;
+    text-indent: -1000em;
+    cursor: pointer;
+    cursor: hand;
+}
+
+
+
+
+/********************* range multiple *****************************************/
+.time-slider {
+    top: 20px;
+    cursor: pointer;
+    position: relative;
+    width: 543px;
+}
+
+.time-slider .slider .area {
+    position: relative;
+    border-left: none;
+    z-index: 2;
+    height: .4em;
+    top: -.3em;
+    cursor: pointer;
+    background: #F0F3F5;
+    border-radius: 10px;
+}
+
+.time-slider .slider .slice {
+    background: #FFCC40;
+    border-radius: 5px;
+    left: 0px;
+    right: 0px;
+    height: 0.4em;
+    position: absolute;
+
+    /* click events should happen only in the slider to get the correct coordinates */
+    pointer-events: none;
+}
+
+.time-slider .slider .handle {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border: 7px solid #FFFFFF;
+    border-radius: .8em;
+    background: #FFCC40;
+    box-shadow: 0px 7px 15px rgba(148, 156, 160, 0.13);
+    z-index: 3;
+    top: -.53em;
+    margin-right: -.5em;
+    margin-bottom: -.6em;
+    cursor: ew-resize;
+}
+
+
+.time-slider .slider .handle.from {
+    margin-left: .6em;
+}
+
+.time-slider .slider .handle.until {
+
+}
+
+
+/* Axis */
+
+.time-slider .axis {
+    stroke-width: 2px;
+}
+
+.time-slider .axis path {
+    stroke-width: 0;
+    fill: none;
+}
+
+.time-slider .axis line {
+    fill: none;
+    stroke: #aaa;
+    shape-rendering: crispEdges;
+}
+
+.time-slider .axis text {
+    font-size: .7em;
+}
+
+
+/* Tooltips */
+
+.time-slider .tooltips {
+
+}
+
+.time-slider .tooltips a {
+    color: #66f;
+    visibility: hidden;
+}
+
+.time-slider .tooltips a:hover {
+    color: #00f;
+    text-decoration: underline;
+}
+
+.time-slider .tooltips div:hover a {
+    visibility: visible;
+}
+
+.time-slider .tooltips > div {
+    position: absolute;
+    top: -60px;
+}
+
+.time-slider .tooltips .dt {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 144.2%;
+    color: #4F4F4F;
+    background: #fbfbfb;
+    padding: .6em;
+    vertical-align: middle;
+    white-space: nowrap;
+    border-radius: .3em;
+    border: 1px solid transparent;
+}
+
+.time-slider .tooltips span, .time-slider .tooltips a {
+    /*    float: left;*/
+    /*    clear: both;*/
+}
+
+.time-slider .tooltips .active {
+}
+
+.time-slider .tooltips .active .dt {
+    border-color: #e0e0e0;
+    background: #f0f0f0;
+}
+
+.time-slider .tooltips .from {
+    left: 0;
+    /*padding-left: 0;*/
+    /*border-right: 1px dotted #e0e0e0;*/
+}
+
+.time-slider .tooltips .until {
+    right: 0;
+    /*padding-right: 0;*/
+    /*border-left: 1px dotted #e0e0e0;*/
+}
+
+.time-slider .tooltips .mouse {
+    border: 1px solid #ddd;
+    background: #fafafa;
+    top: 65px;
+    color: #000;
+    margin-left: 20px;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: .7;
+}
+
+/********************************* validators       ***************************************/
+.validationErr {
+    margin-left: 420px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 144.2%;
+    color: #E34040;
+}
+
+/********************************* TIme tracker ***************************************/
+.time-tracker-container {
+    margin-top: 56px;
+    margin-left: 200px;
+    width: 217px;
+    height: 238px;
+}
+
+.time-tracker-worklog-name {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 144.2%;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 14px;
+    outline: none;
+    border: none;
+    background-color: #F9FAFC;
+}
+
+.time-tracker-issue-name {
+    outline: none;
+    border: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 144.2%;
+    text-align: center;
+    font-variant: small-caps;
+    color: #828282;
+    margin-bottom: 11px;
+    background-color: #F9FAFC;
+}
+
+.time-tracker-control-buttons-container {
+    margin-left: 50px;
+    margin-top: 25px;
+}
+
+.time-tracker-control-buttons {
+    display: grid;
+    grid-template-columns: 48px 48px;
+    grid-template-rows: 48px;
+    grid-column-gap: 22px;
+}
+
+.time-tracker-timer {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 54px;
+    line-height: 144.2%;
+    text-align: center;
+    color: #1E1E1E;
+}
+
+/********************************* FavoritesButton ***************************************/
+.Favorites-message-container {
+    margin-left: 96px;
+    margin-top: 73px;
+}
+
+.Favorites-message {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 144.2%;
+    color: #1E1E1E;
+}
+
+.New-issue-container {
+    margin-top: 60px;
+    margin-left: 121px;
+}
+
+/***********************************************/
+
+.ui-slider-horizontal {
+    height: 10px;
+    background: #F0F3F5;
+    border: 1px solid #BABABA;
+    box-shadow: 0 1px 0 #FFF, 0 1px 0 #CFCFCF inset;
+    clear: both;
+    margin: 8px 0;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}
+.ui-slider {
+    position: relative;
+    text-align: left;
+
+}
+.ui-slider-horizontal .ui-slider-range {
+    top: -1px;
+    height: 90%;
+}
+.ui-slider .ui-slider-range {
+    padding-top: 4px;
+    position: absolute;
+    z-index: 1;
+    font-size: .7em;
+    display: block;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+    background: #FFCC40 ;
+    background-size: 100%;
+
+}
+.ui-slider .ui-slider-handle {
+    border-radius: 50%;
+    background: #FFFFFF;
+    background-size: 100%;
+    background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0%, #f0f7ff), color-stop(100%, #fdfffe));
+    background-image: -webkit-linear-gradient(top, #FFFFFF, #ffffff);
+    background-image: -moz-linear-gradient(top, #FFFFFF, #FFFFFF);
+    background-image: -o-linear-gradient(top, #FFFFFF, #FFFFFF);
+    background-image: linear-gradient(top, #FFFFFF, #FFFFFF);
+    width: 16px;
+    height: 16px;
+    -webkit-box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.6), 0 -1px 0 1px rgba(0, 0, 0, 0.15) inset, 0 1px 0 1px rgba(255, 255, 255, 0.9) inset;
+    -moz-box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.6), 0 -1px 0 1px rgba(0, 0, 0, 0.15) inset, 0 1px 0 1px rgba(255, 255, 255, 0.9) inset;
+    box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.6), 0 -1px 0 1px rgba(0, 0, 0, 0.15) inset, 0 1px 0 1px rgba(255, 255, 255, 0.9) inset;
+    -webkit-transition: box-shadow .3s;
+    -moz-transition: box-shadow .3s;
+    -o-transition: box-shadow .3s;
+    transition: box-shadow .3s;
+
+}
+.ui-slider .ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    width: 22px;
+    height: 22px;
+    border: none;
+    cursor: pointer;
+    outline:none;
+}
+.ui-slider .ui-slider-handle:after {
+    content:"";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    top: 50%;
+    margin-top: -4px;
+    left: 50%;
+    margin-left: -4px;
+    background: #FFCC40 ;
+
+}
+.ui-slider-horizontal .ui-slider-handle {
+    top: -7px;
+    margin-left: -.6em;
+}
+.ui-slider a:focus {
+    outline:none;
+}
+
+#slider-range {
+    width: 90%;
+    margin: 0 auto;
+}
+#time-range {
+    width: 543px;
+}
+
+.LabelImage{
+    border: 1px solid #FFCC40;
+    width : 10px;
+    transform : rotate(-90deg);
+    margin-top: 33px;
+    margin-left: 5px;
+}
+.TimeLabel{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 144.2%;
+    color: #4F4F4F;
+}
+.TimeLabelValue{
+    margin-left: -8px;
+    padding-top: 5px;
+}
