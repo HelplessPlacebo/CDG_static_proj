@@ -1,29 +1,31 @@
-class TimeTracker extends HTMLElement {
-    connectedCallback() {
-        let worklogName = this.getAttribute("worklog-name")
-        let IssueName = this.getAttribute("issue-name")
-        let TimerValue = this.getAttribute("timer-value")
-        this.innerHTML = `<div class="time-tracker-container">
-                       ${worklogName && (worklogName !== "undefined" )
-            ? `<input class="time-tracker-worklog-name" 
-                    placeholder="add worklog "
-                    value=${worklogName} 
-                     type="text">`
-            : `<input class="time-tracker-worklog-name" 
-                    placeholder="add worklog "
-                     type="text">`}
+
+
+
+
+const WorklogOnControlButtonsClick = (event) => {
+    let TimeTrackingRoot = document.getElementById("TT-main-content-root")
+    let  CurrentTarget = event.currentTarget
+    if (CurrentTarget.classList.contains("active")){
+
+        CurrentTarget.innerHTML = `<div class="stop-button">
+                <p>
+                    <img src="../assets/imgs/stop_button.svg" alt="stop-button">
+                </p>
+            </div>`
+
+        TimeTrackingRoot.innerHTML = `<div class="time-tracker-container">
                   
+             <input class="time-tracker-worklog-name" 
+                    placeholder="add worklog "
+                    value="Meeting with QA" 
+                     type="text">
                      
-                   ${ IssueName && (IssueName !== "undefined" )
-            ? `<input class="time-tracker-issue-name" 
+          <input class="time-tracker-issue-name" 
                     placeholder="add issue "
-                    value=${IssueName} 
-                     type="text">`
-            : `<input class="time-tracker-issue-name" 
-                    placeholder="add issue "
-                     type="text">`}
-                      
-                    <div class="time-tracker-timer">${TimerValue}</div>
+                    value="ADD ISSUE"
+                     type="text">
+
+                    <div class="time-tracker-timer">01:15:00</div>
                     
                     <div class="time-tracker-control-buttons-container">
                     <div class="time-tracker-control-buttons">   
@@ -35,35 +37,7 @@ class TimeTracker extends HTMLElement {
                     </div>
                     </div>
                     </div>
-                </div>`
-    }
-}
-
-window.customElements.define("time-tracker", TimeTracker);
-
-
-let ControlButtonsRoot = document.querySelectorAll(".control-buttons-container")
-
-const WorklogOnControlButtonsClick = (event) => {
-    let TimeTrackingRoot = document.getElementById("TT-main-content-root")
-    let  CurrentTarget = event.currentTarget
-    let RootEl = event.currentTarget.parentElement.parentElement
-    if (CurrentTarget.classList.contains("active")){
-        let AtrObj = {} // create a new obj for simplify transfer
-        const attributes = RootEl.attributes // get parent attributes for transfer to active-issue
-        for (let i = 0; i < attributes.length; i++) {
-            AtrObj[`${(attributes[i].name)}`] = attributes[i].value
-        }
-        CurrentTarget.innerHTML = `<div class="stop-button">
-                <p>
-                    <img src="../assets/imgs/stop_button.svg" alt="stop-button">
-                </p>
-            </div>`
-        TimeTrackingRoot.innerHTML = `<time-tracker 
-                                            worklog-name=${AtrObj[`task-field`]}
-                                            issue-name=${AtrObj[`issue-name`]}
-                                            timer-value=${AtrObj['timer-value']}>
-                                             </time-tracker>`
+                </div> `
 
         CurrentTarget.classList.remove("active")
     }
@@ -98,6 +72,7 @@ const WorklogOnControlButtonsClick = (event) => {
         CurrentTarget.classList.add("active")
     }
 }
+let ControlButtonsRoot = document.querySelectorAll(".control-buttons-container")
 ControlButtonsRoot.forEach((ControlButtonsRootEl) =>{
     ControlButtonsRootEl.classList.add("active")
     ControlButtonsRootEl.addEventListener("click", (event)=>{ WorklogOnControlButtonsClick(event) })

@@ -31,13 +31,13 @@ $("#slider-range").slider({
 let LeftTimeLabel = document.createElement("div")
 LeftTimeLabel.innerHTML = `<div id="LeftLabelRight" class="TimeLabel">
                         <div class="LabelImage"></div>
-                        <div class="TimeLabelValue" id="slider-time"> </div>
+                        <div class="TimeLabelValue" id="slider-time"> 09:00 </div>
                     </div>`
 document.querySelectorAll(".ui-slider-handle")[0].appendChild(LeftTimeLabel)
 // add label for right slider handler
 let RightTimeLabel = document.createElement("div")
 RightTimeLabel.innerHTML = `<div id = "TimeLabelRight" class="TimeLabel">
                             <div class="LabelImage"> </div>
-                            <div class="TimeLabelValue" id="slider-time2"></div>
+                            <div class="TimeLabelValue" id="slider-time2"> 16:30 </div>
                          </div>`
 document.querySelectorAll(".ui-slider-handle")[1].appendChild(RightTimeLabel)
