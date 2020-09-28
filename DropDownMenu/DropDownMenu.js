@@ -21,15 +21,3 @@ const DropDownMenu = (e, RootElId, MenuId) => {
 }
 
 
-/*
-let smallCalendar = document.getElementById("small-calendar")
-smallCalendar.classList.add("active")
-smallCalendar.addEventListener("click",(event)=>{
-    if (smallCalendar.classList.contains("active")) {
-        smallCalendar.innerHTML = `<img src="../assets/imgs/calendar_active.svg">`
-        smallCalendar.classList.remove("active")
-    } else {
-        smallCalendar.innerHTML = `<img src="../assets/imgs/calendar_gray.svg">`
-        smallCalendar.classList.add("active")
-    }
-})*/

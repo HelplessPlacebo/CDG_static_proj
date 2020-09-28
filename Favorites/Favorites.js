@@ -18,7 +18,7 @@ const FavoritesButtonOnActive = (event) =>{
                         <div class="new-worklog-button-pose">
                             <div class="js-open-modal" data-modal="1">
                                 <img class="new-worklog-button-size"
-                                     src="../assets/imgs/new_worklog_button.svg"
+                                     src="./assets/imgs/new_worklog_button.svg"
                                      alt="new_worklog_button">
                             </div>
                         </div>

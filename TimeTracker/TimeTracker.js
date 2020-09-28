@@ -9,7 +9,7 @@ const WorklogOnControlButtonsClick = (event) => {
 
         CurrentTarget.innerHTML = `<div class="stop-button">
                 <p>
-                    <img src="../assets/imgs/stop_button.svg" alt="stop-button">
+                    <img src="./assets/imgs/stop_button.svg" alt="stop-button">
                 </p>
             </div>`
 
@@ -30,10 +30,10 @@ const WorklogOnControlButtonsClick = (event) => {
                     <div class="time-tracker-control-buttons-container">
                     <div class="time-tracker-control-buttons">   
                     <div>   
-                        <img src="../assets/imgs/TT-stop-button.svg" alt="">
+                        <img src="./assets/imgs/TT-stop-button.svg" alt="">
                     </div>
                        <div>   
-                        <img src="../assets/imgs/TT-pause-button.svg" alt="">
+                        <img src="./assets/imgs/TT-pause-button.svg" alt="">
                     </div>
                     </div>
                     </div>
@@ -44,7 +44,7 @@ const WorklogOnControlButtonsClick = (event) => {
     else{
         CurrentTarget.innerHTML = ` <div  class="play-button">
                     <p>
-                        <img src="../assets/imgs/play-button.svg" alt="play-button">
+                        <img src="./assets/imgs/play-button.svg" alt="play-button">
                     </p>
                 </div>`
         TimeTrackingRoot.innerHTML = `       <div id="TT-main-content-root" class="TT-main-content-root">
@@ -53,7 +53,7 @@ const WorklogOnControlButtonsClick = (event) => {
                         <div class="new-worklog-button-pose">
                             <div class="js-open-modal" data-modal="1">
                                 <img class="new-worklog-button-size"
-                                     src="../assets/imgs/new_worklog_button.svg"
+                                     src="./assets/imgs/new_worklog_button.svg"
                                      alt="new_worklog_button">
                             </div>
                         </div>

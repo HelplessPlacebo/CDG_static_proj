@@ -8,7 +8,7 @@ body {
 
 @font-face {
     font-family: 'Roboto', serif;
-    src: url(../assets/roboto/Roboto-Regular.woff2) format("woff2");
+    src: url(./assets/roboto/Roboto-Regular.woff2) format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: fallback;
@@ -350,7 +350,6 @@ body {
 .worklog-block-container {
     width: 1200px;
     margin-top: 5px;
-
 }
 
 .worklog-active{
@@ -362,7 +361,6 @@ body {
     background-color: #FFFFFF;
     height: 86px;
     border-radius: 10px;
-
 }
 
 .worklog-block-container:hover .WorklogMoreButton{
@@ -1207,7 +1205,7 @@ input:checked[type="checkbox"]::before {
     margin: 0;
     padding: 0;
     border: 0;
-    background: transparent url('../assets/imgs/confirmButton.svg') no-repeat center top;
+    background: transparent url('./assets/imgs/confirmButton.svg') no-repeat center top;
     text-indent: -1000em;
     cursor: pointer;
     cursor: hand;

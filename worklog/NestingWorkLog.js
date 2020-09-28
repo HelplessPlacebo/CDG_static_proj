@@ -11,7 +11,7 @@ const WLDLLHandler = (e, Action, optionalRootId = null) => {
     }
     if (Action === "show") {
         WLDDL_button_container.innerHTML = `<div  id="WLDDL_Drop-up_button" class="tww-content-bg">
-                                <img class="tww-content-img" src=../assets/imgs/arrow-up.svg> 
+                                <img class="tww-content-img" src=./assets/imgs/arrow-up.svg> 
                                 </div>`
 
         let NestedWorklogs = document.createElement("div")
@@ -52,17 +52,17 @@ const WLDLLHandler = (e, Action, optionalRootId = null) => {
 
                                     <div class="play-button">
                                         <p>
-                                            <img src="../assets/imgs/play-button.svg" alt="play-button">
+                                            <img src="./assets/imgs/play-button.svg" alt="play-button">
                                         </p>
                                     </div>
 
                                 </div>
                                        <div id="WorklogMoreButton3"    >
                                     <div class="WorklogMoreButton">
-                                        <img src="../assets/imgs/worklogMoreButtonBG.svg"
+                                        <img src="./assets/imgs/worklogMoreButtonBG.svg"
                                              alt="issue-more-info-button">
                                     </div>
-                                    <img class="WorklogMoreVertical" src="../assets/imgs/worklogMoreVertical.svg" alt="more-vertical">
+                                    <img class="WorklogMoreVertical" src="./assets/imgs/worklogMoreVertical.svg" alt="more-vertical">
                                 </div>
 
                             </div>
@@ -107,17 +107,17 @@ const WLDLLHandler = (e, Action, optionalRootId = null) => {
 
                                     <div class="play-button">
                                         <p>
-                                            <img src="../assets/imgs/play-button.svg" alt="play-button">
+                                            <img src="./assets/imgs/play-button.svg" alt="play-button">
                                         </p>
                                     </div>
 
                                 </div>
                                     <div id="WorklogMoreButton4"    >
                                     <div class="WorklogMoreButton">
-                                        <img src="../assets/imgs/worklogMoreButtonBG.svg"
+                                        <img src="./assets/imgs/worklogMoreButtonBG.svg"
                                              alt="issue-more-info-button">
                                     </div>
-                                    <img class="WorklogMoreVertical" src="../assets/imgs/worklogMoreVertical.svg" alt="more-vertical">
+                                    <img class="WorklogMoreVertical" src="./assets/imgs/worklogMoreVertical.svg" alt="more-vertical">
                                 </div>
 
                             </div>
